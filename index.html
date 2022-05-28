@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.5.3/css/bootstrap.min.css" integrity="sha384-JvExCACAZcHNJEc7156QaHXTnQL3hQBixvj5RV5buE7vgnNEzzskDtx9NQ4p6BJe" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="assets/fonts/typicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	
+	 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;700&display=swap" rel="stylesheet"> 
+<style>
+* {
+    font-family: 'Markazi Text', serif;
+}
+
+h1,h2,h3 {
+    font-family: 'Markazi Text', serif;
+}
+</style>
+</head>
+
+<body dir="rtl">
+    <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#">Brute Force Team</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+        </div>
+    </nav>
+    <header class="text-center text-white masthead" style="background:url('assets/img/bg-masthead.jpg')no-repeat center center;background-size:cover;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">نرحب بكم في العرض الفني&nbsp;<br>لفريق Brute Force في برمجان العربيّة</h1>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" id="word" placeholder="أدخل كلمة هنا"></div>
+                            <div class="col-12 col-md-3"><button class="btn btn-primary btn-block btn-lg" id="analyze">حلّل الكلمة</button></div>
+                        </div>
+						
+                        <div class="form-row">
+
+                        </div>						
+						
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="text-center bg-light features-icons">
+        <div class="container">
+            <div class="row">
+				<div class="col-lg-12">
+					<div id="result">
+					</div>
+				</div>			
+			</div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                        <div class="d-flex features-icons-icon"><i class="typcn typcn-sort-numerically m-auto text-primary" data-bss-hover-animate="pulse"></i></div>
+                        <h3>أكثر من 3807 جذراً عربيّاً</h3>
+                        <p class="lead mb-0">بين جذور ثلاثية ورباعية</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                        <div class="d-flex features-icons-icon"><i class="icon-layers m-auto text-primary" data-bss-hover-animate="pulse"></i></div>
+                        <h3>خوارزمية سهلة ومبتكرة</h3>
+                        <p class="lead mb-0">تحقق التوازن بين الحل الفني والمميزات الوظيفيّة</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                        <div class="d-flex features-icons-icon"><i class="icon-check m-auto text-primary" data-bss-hover-animate="pulse"></i></div>
+                        <h3>أهم وأكثر الأوزان العربية</h3>
+                        <p class="lead mb-0">165 وزناً لجميع صيغ الأسماء والأفعال</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="showcase"></section>
+    <footer class="bg-light footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-left my-auto h-100">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="#">Home Page</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">© Brute Force Team 2022. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-right my-auto h-100">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+	<script>	
+	$(document).ready(function(){
+		$("#analyze").click(function(e){
+			e.preventDefault();
+			var word = $("#word").val();
+			console.log(word);
+			
+			$.ajax({
+				url: "./full-lib.php",
+				data: {word: word},
+				success: function(result){
+					$("#result").html(result);
+				}
+			});
+			
+		});
+	});
+	</script>
+</body>
+
+</html>
