@@ -1,4 +1,4 @@
-# Assaf - Brute Force Generative Stemmer
+# Assaf (عسّاف) - Brute Force Generative Stemmer
 
 This is our finalist entry to the Arabic Hackathon 2022.
 
